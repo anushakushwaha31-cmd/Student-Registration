@@ -1,0 +1,14 @@
+{
+  "name": "student-registration-api",
+  "version": "1.1.0",
+  "description": "Full-stack student registration app with REST API fetching and SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  }
+}

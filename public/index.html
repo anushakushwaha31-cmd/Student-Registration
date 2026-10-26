@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Full-stack student registration demo with REST API fetching.">
+  <title>Student Registration Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="brand-icon" aria-hidden="true">🎓</div>
+      <p class="eyebrow">STUDENT PORTAL</p>
+      <h1>Student Registration</h1>
+      <p class="subtitle">Fill in your details to register for a course.</p>
+
+      <form id="registrationForm">
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" placeholder="e.g. Ananya Sharma" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" maxlength="150" required>
+        </div>
+        <div class="field">
+          <label for="rollNumber">Roll number</label>
+          <input id="rollNumber" name="rollNumber" type="text" placeholder="e.g. CS2026001" maxlength="30" required>
+        </div>
+        <div class="field">
+          <label for="course">Course</label>
+          <select id="course" name="course" required>
+            <option value="">Select your course</option>
+            <option>Computer Science</option>
+            <option>Information Technology</option>
+            <option>Electronics Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Business Administration</option>
+          </select>
+        </div>
+        <fieldset class="field gender-field">
+          <legend>Gender</legend>
+          <label class="radio-label"><input type="radio" name="gender" value="Female" required> Female</label>
+          <label class="radio-label"><input type="radio" name="gender" value="Male"> Male</label>
+          <label class="radio-label"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+        </fieldset>
+        <button id="submitButton" type="submit">Register student <span aria-hidden="true">→</span></button>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="footnote">Registration details are saved to the project database.</p>
+    </section>
+
+    <section class="records">
+      <div class="records-heading">
+        <div>
+          <p class="eyebrow">DATABASE RECORDS</p>
+          <h2>Registered students</h2>
+        </div>
+        <button type="button" id="refreshButton" class="secondary-button">Refresh list</button>
+      </div>
+      <p id="listMessage" class="list-message" role="status">Fetching student records...</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Roll number</th><th>Course</th><th>Email</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTable">
+            <tr><td colspan="6" class="empty">Loading records...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
